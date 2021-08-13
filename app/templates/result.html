@@ -1,0 +1,92 @@
+{% extends 'menu.html' %}
+
+{% block body %}
+ 
+
+<div class="container justify-content-center my-3" style="padding-top: 10px;" >
+  <div class="row justify-content-center align-middle my-3">
+    <h2>
+      {{info[1][1]}}
+    </h2>
+  </div>
+  <div class="row justify-content-center align-middle my-3">
+    <div class="d-flex justify-content-center ml-5">
+      <img src="../static/default.png" style="width: 50px;">
+    </div>
+  </div>
+  <div class="row justify-content-center align-middle my-3">
+    <div class="d-flex justify-content-center ml-5">
+    <table class="table table-borderless">
+      <tr>
+        <th>NAME</th>
+        <td><label name="name">{{ info[1][1] }}</label></td>
+      </tr>
+      <tr>
+        <th>EMAIL</th>
+        <td><label name="email">{{ info[1][2] }}</label></td>
+      </tr>
+      <tr>
+        <th>FOLLOWERS</th>
+        <td><label name="followers">{{ info[1][7] }}</label></td>
+      </tr>
+      <tr>
+        <th>GENDER</th>
+        <td><label name="gender">{{ info[1][6] }}</label></td>
+      </tr>
+      <tr>
+        <th>Signed</th>
+        {% if info[1][6] == 0 %}
+        <td><label name="notsigned">NO</label></td>
+        {% else %}
+        <td><label name="signed">YES</label></td>
+        {% endif %}
+      </tr>
+      <tr>
+        <th>DoB</th>
+        <td><label name="dob">{{ info[1][4] }}</label></td>
+      </tr>
+      
+    </table>
+    </div>
+  </div>
+  <div class="row justify-content-center align-middle my-3">
+    <br>
+    <h2>
+      Albums by {{info[1][1]}}
+    </h2>
+  </div>
+  <div class="row justify-content-center align-middle my-3">
+    <div class="d-flex justify-content-center ml-5">
+    <table class="table table-borderless">
+      <tr>
+        <th>AlbumID</th>
+        <th>Album Name</th>
+        <th>Label Name</th>
+        <th>No Of Songs</th>
+        <th>Release Date</th>
+      </tr>
+      {% for user in info[0] %}
+    
+      <tr class="align-middle">
+        <td> {{user[0]}} </td>
+        <td> {{user[1]}} </td>
+        <td> {{user[4]}} </td>
+        <td> {{user[5]}} </td>
+        <td> {{user[6]}} </td>
+        <td> 
+          <form method="POST" action="">
+            <input type="hidden" name="numb" value="{{ user[0] }}">
+            <button class="btn btn-light" type="submit"><small>Favourite</small></button>
+          </form>
+      </td>
+      </tr>
+      {% endfor %}
+      
+    </table>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

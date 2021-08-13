@@ -1,0 +1,26 @@
+{% extends 'menu.html' %}
+
+{% block body %}
+
+
+<div class="container justify-content-center my-3" style="padding-top: 15vh;">
+<form method="POST" action="{{ url_for('match') }}">
+  <div class="row justify-content-center align-middle my-3">
+    <h1> Please select one of your favourite artist :</h1>
+  </div>
+  <div class="row justify-content-center align-middle my-3">
+    <select name="comp_select" class="selectpicker form-control">
+      {% for o in info %}
+      <option value="{{ o[1] }}">{{ o[1] }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="row justify-content-center align-middle my-3">
+    <button type="submit" class="btn btn-light"><h5>Meet Some People</h5></button>
+  </div>    
+</form>
+</div>
+
+
+{% endblock %}
+

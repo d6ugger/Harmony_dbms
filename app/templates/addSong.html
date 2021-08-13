@@ -1,0 +1,59 @@
+{% extends 'menu.html' %}
+
+{% block body %}
+
+<div class="container-fluid justify-content-center">
+    <div class="row justify-content-center text-center" style="padding: 50px;">
+        <div class="col-12 col-sm-6 col-md-3 bg-light " style="padding: 50px;">
+            {% if info == 0 %}
+            <div >
+                <small>You are already registered as an artist.<br><br></small>
+            </div>
+            {% elif info ==1 %}
+            <div >
+                <small>You are now registered as an artist.<br><br></small>
+            </div>
+            {%  elif info ==2 %}
+            <div >
+                <small>You are not registered as an artist or your password is inncorrect.<br><br></small>
+            </div>
+            {% endif %}
+            <form method="POST" action="" class="form-container">
+                <h1> Add a New Song </h1>
+                <br>
+              <div class="form-group">
+                <input type="text" name="uname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <input type="text" name="artist_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Artist Name">
+              </div>
+              <div class="form-group">
+                <input type="text" name="label_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Label Name">
+              </div>
+              <div class="form-group">
+                <input type="text" name="album_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Album Name">
+              </div>
+              <div class="form-group">
+                <input type="text" name="genre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Genre">
+              </div>
+              <div class="form-group">
+                <input type="text" name="lang" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Language">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Date of Release:</label>
+                <input type="date" name="dor" class="form-control">
+              </div>
+              <div class="form-group">
+                <input type="password" name="passwd" class="form-control" id="exampleInputEmail1" placeholder="Please provide your Artist Password">
+              </div>
+             
+              <br>
+              <button type="submit" class="btn btn-primary btn-block">Add Song</button>
+              <br>
+              <a href="{{ url_for('artistAdd') }}"> <small>Haven't Registered as an Artist? Register Here </small></a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

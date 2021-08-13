@@ -1,0 +1,45 @@
+{% extends 'menu.html' %}
+
+{% block body %}
+
+	<div class="container justify-content-center my-3" style="padding-top: 5vh;" >
+		<div class="row justify-content-center align-middle my-3">
+			<div class="d-flex justify-content-center ml-5">
+				<img src="../static/default.png" style="width: 200px;">
+			</div>
+		</div>
+		<div class="row justify-content-center align-middle my-3">
+			<div class="d-flex justify-content-center ml-5">
+			<table class="table table-borderless">
+				<tr>
+					<th>NAME</th>
+					<td><label name="name">{{ info[1] }}</label></td>
+				</tr>
+				<tr>
+					<th>EMAIL</th>
+					<td><label name="email">{{ info[2] }}</label></td>
+				</tr>
+				<tr>
+					<th>DoB</th>
+					<td><label name="dob">{{ info[4] }}</label></td>
+				</tr>
+				<tr>
+					<th>GENDER</th>
+					<td><label name="gender">{{ info[5] }}</label></td>
+				</tr>
+				
+			</table>
+			</div>
+		</div>
+		<div class="row justify-content-center align-middle my-3">
+			<div class="d-flex justify-content-center">
+				<form method="POST" action="">
+					Change Password : <input class="form-control" id="exampleInputPassword1" type="password" name="passwd">
+					<br>
+					<input class="btn btn-primary btn-block" type="submit" value="Submit">
+				</form>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

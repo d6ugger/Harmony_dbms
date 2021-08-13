@@ -1,0 +1,47 @@
+{% extends 'menu.html' %}
+
+{% block body %}
+<div class="container justify-content-center my-3" style="padding-top: 15vh;">
+
+    <div class="row justify-content-center align-middle my-3">
+        <div class="d-flex justify-content-center ml-5">
+        <table class="table table-borderless">
+            <tr>
+                <th>NAME</th>
+                <td><label name="name">{{ info[1] }}</label></td>
+            </tr>
+            <tr>
+                <th>EMAIL</th>
+                <td><label name="email">{{ info[2] }}</label></td>
+            </tr>
+            <tr>
+                <th>DoB</th>
+                <td><label name="dob">{{ info[4] }}</label></td>
+            </tr>
+            <tr>
+                <th>GENDER</th>
+                <td><label name="gender">{{ info[5] }}</label></td>
+            </tr>
+            
+        </table>
+        </div>
+    </div>
+    <div class="row justify-content-center align-middle my-3">
+        <div class="d-flex justify-content-center">
+            <div class="col">
+                <form method="POST" action="{{ url_for('connect') }}">
+                    <input type="hidden" name="userid" value='{{ info[0] }}' >
+                    <input type="hidden" name="userName" value='{{ info[1] }}' >
+                    <button type="submit" class="btn btn-light">Go</button>
+                </form>
+            </div>
+            <div class="col">
+                <a href="{{ url_for('match') }}"><button class="btn btn-light">Next</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center align-middle my-3">
+        <a href="{{ url_for('artistPick') }}"><button class="btn btn-light">Select Another Artist</button></a>
+    </div>
+</div>
+{% endblock %}

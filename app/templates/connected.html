@@ -1,0 +1,20 @@
+{% extends 'menu.html' %}
+
+{% block body %}
+<div class="container justify-content-center my-3" style="padding-top: 30vh;">
+<div class="row justify-content-center align-middle my-3">
+    <h1>{{ info[0] }}! </h1>
+</div>
+<div class="row justify-content-center align-middle my-3">
+    <h4>Go email them at {{ info[1] }} </h4>
+</div>
+<div class="row justify-content-center align-middle my-3">
+    <a href="{{ url_for('match') }}"><button class="btn btn-light">Still wanna match?</button></a>
+</div><br><br>
+<div class="row justify-content-center align-middle my-3">
+    <a href="{{ url_for('homePage') }}"><button class="btn btn-light">Got to Home</button></a>
+</div>
+</div>
+
+
+{% endblock %}

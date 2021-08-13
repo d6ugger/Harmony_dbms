@@ -1,0 +1,64 @@
+
+{% extends 'menu.html' %}
+
+{% block body %}
+<div class="container my-3"></div>
+  <div class="row my-5 mx-5 text-center ">
+    <div class="col  text-center align-self-center"><h1>Hello {{uname}}</h1></div>
+  </div>
+  <div class="row text-center align-middle my-3" style="padding-top: 10vh;" >
+    <div class="col ">
+      <div class="row my-5 mx-5 justify-content-center ">
+        <h2>Song Suggest</h2>
+      </div>
+      <div class="row my-5 mx-5 justify-content-center">
+        This feature suggests you songs which you would like to hear based on the albums and artists you have liked. Our software chooses the best four songs which we think you would totally love and would admire.
+      </div>
+      <div class="row my-5 mx-5 justify-content-center">
+        <a href="{{ url_for('suggestion') }}"><button class="btn btn-light">Get Suggestions</button></a>
+      </div>
+    </div>
+    <div class="col">
+        <div class="row my-5 mx-5 justify-content-center ">
+          <h2>Meet People</h2>
+        </div>
+        <div class="row my-5 mx-5 justify-content-center">
+          This feature in our software allows you to connect with people with the same music taste as yours. Our software allows you to select a person which has the same favourite artist as you do. Isn't it fun?
+        </div>
+        <div class="row my-5 mx-5 justify-content-center">
+          <a href="{{ url_for('artistPick') }}"><button class="btn btn-light">Meet People</button></a>
+        </div>
+    </div>
+    <div class="col">
+        <div class="row my-5 mx-5 justify-content-center ">
+          <h2>Artists & Albums</h2>
+        </div>
+        <div class="row my-5 mx-5 justify-content-center">
+          You wanna know about a particular artist and their albums? Worry not. Just by a click you could find any artist that you have been looking for and their albums. You can even favourite them by a click.
+        </div>
+        <div class="row my-5 mx-5 justify-content-center">
+          <div class="col"><a href="{{ url_for('artistSearch') }}"><button class="btn btn-light">Find Artists</button></a></div>
+        </div>
+    </div>
+    <div class="col">
+      <div class="row my-5 mx-5 justify-content-center ">
+        <h2>Be an Artist</h2>
+      </div>
+      <div class="row my-5 mx-5 justify-content-center">
+        This feature allows you to be an artist and register yourself on our software. And then you could use our software to add your songs and albums and showcasing the world your talents. Add some songs already.
+      </div>
+      <div class="row my-5 justify-content-center">
+        <div class="d-flex justify-content-center">
+        <div class="col">
+          <a href="{{ url_for('artistAdd') }}"><button class="btn btn-light">Artist</button></a>
+        </div>
+        <div class="col">
+          <a href="{{ url_for('songAdd') }}"><button class="btn btn-light">Songs</button></a>
+        </div>
+        </div>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}

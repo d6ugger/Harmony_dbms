@@ -1,0 +1,27 @@
+{% extends 'menu.html' %}
+
+{% block body %}
+
+<form method="POST" action="">
+<div class="container justify-content-center my-3" style="padding-top: 30vh;">
+  <div class="row justify-content-center align-middle my-3">
+    <div class="col">
+    <div class="d-flex justify-content-center ml-5">
+        <h2>Type the Name of The Artist</h2>
+      </div>
+    </div>
+      <div class="col">
+        <input class="input-group" type="text" name="name" />
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center align-middle my-3">
+    <div class="d-flex justify-content-center ml-5">
+      <button class="btn btn-light" type="submit"><h4>Search Artist</h4></button>
+    </div>
+  </div>
+</div>
+</form>
+
+
+{% endblock %}

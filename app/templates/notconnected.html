@@ -1,0 +1,8 @@
+{% extends 'menu.html' %}
+
+{% block body %}
+
+<p> You have already been connected with {{ info }}</p>
+<a href="{{ url_for('match') }}"><button onclick="nextItem()">Match with others?</button></a>
+
+{% endblock %}

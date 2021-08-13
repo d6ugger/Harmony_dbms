@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+
+{% block hello %}
+
+    <nav class="navbar navbar-expand-lg navbar-light mb-2 nav-des bg-light">
+        <a class="navbar-brand" href="{{ url_for('homePage' )}}">Harmony</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-5 ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('profile') }}"><img src="../static/default.png" style="width: 20px;">  Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('artistPick') }}">Meet!!</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('suggestion') }}">Song Suggest</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Artists
+                    </a>
+                    <div class="dropdown-menu nav-des" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ url_for('artistSearch') }}">Find Artists</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{ url_for('artistAdd') }}">Be an Artist</a>
+                        <a class="dropdown-item" href="{{ url_for('songAdd') }}">Add Songs</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('homePage') }}">Back To Home</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        
+        {% block body %}
+        {% endblock %}
+
+    </div>
+
+{% endblock %}

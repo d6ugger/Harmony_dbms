@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block hello %}
+
+<div class="container-fluid justify-content-center">
+	<div class="row justify-content-center text-center" style="padding: 25vh;">
+		<div class="col-12 col-sm-6 col-md-3 bg-light " style="padding: 50px;">
+			<form method="POST" action="" class="form-container">
+				<h1> Login </h1>
+			<br>
+			  <div class="form-group">
+				<input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+			  </div>
+			  <div class="form-group">
+				<input type="password" class="form-control" id="exampleInputPassword1" name="passwd" placeholder="Password">
+			  </div>
+			  <br>
+			  <button type="submit" class="btn btn-primary btn-block">Login</button>
+			  <br>
+			  <a href="{{ url_for('register') }}"> <small>New Here? Register</small></a>
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

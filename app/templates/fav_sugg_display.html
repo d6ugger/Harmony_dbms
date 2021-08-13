@@ -1,0 +1,33 @@
+{% extends 'menu.html' %}
+{% block body %}
+
+
+<div class="container justify-content-center my-3" style="padding-top: 15vh;">
+    {% if result|length > 0 %}
+    <div class="row justify-content-center align-middle my-3">
+        <h1> The following songs are recommended for you :</h1>
+    </div>
+    <div class="row justify-content-center align-middle my-3">
+        <ul class="list-group list-group-flush">
+            {% for user in result %}
+            <li class="list-group-item">
+                <blockquote class="blockquote">
+                    <p class="mb-0">{{ user[1] }}</p>
+                <footer class="blockquote-footer">{{ user[2] }} <cite title="Source Title">'{{ user[4] }}'</cite></footer>
+                </blockquote>
+            </li> 
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="row justify-content-center align-middle my-3">
+        <a href="{{ url_for('suggestion') }}"><button class="btn btn-light">Refresh Suggestions</button></a>
+    </div>
+    {% else %}
+    <div class="row justify-content-center align-middle my-3">
+        <h1>Please mark some favorite albums to get suggestions! </h1>
+    </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}
